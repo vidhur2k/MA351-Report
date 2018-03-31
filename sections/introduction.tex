@@ -1,11 +1,10 @@
 
-\subsection{Mathmatical Model}	
+\subsection{Mathmatical Model of a single Perceptron}	
 		
 A perceptron is nothing more than a function that takes in several inputs and produces an output of either 0 or 1.\\ \\
-The input of perceptron is usually modeled as a column vector. Let $X(n\times1)$ represent this column vector. The perceptron applies weights to each values in the $X$ and then sums them together. In other words, the perceptron finds a linear combination of the matrix $X$ as show below. At first these weights are random, however, while training the weights get set to the optimal values through a process called back propagation. The inner works of back propagation will be covered later.
+The input of perceptron is usually modeled as a column vector. Let $X(n\times1)$ represent this column vector. The perceptron applies weights to each values in the $X$ and then sums them together. In other words, the perceptron finds a linear combination of the matrix $X$ as show below.
 $$
 X = 
-a change 
 \begin{bmatrix}
 	x_1 \\
 	x_2 \\
@@ -14,3 +13,26 @@ a change
 	x_n
 \end{bmatrix} 
 $$
+Let $\alpha$ be a possible linear combination of $X$. 
+$$
+	\alpha = \sum_{i=1}^{n} a_ix_i = a_1x_1 + a_2x_2 + \dots + a_nx_n
+$$
+At first all $a_i$ are chosen randomly, however, during the training process they will get adjusted until they are able to produce the optimal output. The training process we utilized in out program is called back propagation and will be covered later in this paper.\\
+
+The next step of the perceptron utilizes an activation function. An activation function can be either 0 or 1, depending on a threshold value. The threshold value is selected based on the specific use of the perceptron. Below is an example of an activation function. Let $T$ represent the threshold value.
+
+$$f(x) = 
+	\begin{array}{cc}
+  	\{ & 
+    \begin{array}{cc}
+    	1 & x >= T \\
+    	0 & x < T
+    \end{array}
+\end{array}
+$$
+
+The output of the perceptron is the output of the activation function above.
+
+\subsection{Layering perceptrons}
+
+Perceptrons are often useless by themselves. Most of the time perceptrons are stacked into column vectors. Then these column vectors are linked together. 
