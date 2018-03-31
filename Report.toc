@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}What this report entails}{2}
+\contentsline {section}{\numberline {2}Introduction: What is a Perceptron?}{2}
+\contentsline {section}{\numberline {3}Workings: What drives a Perceptron?}{2}
+\contentsline {subsection}{\numberline {3.1}Mathmatical Model}{2}
+\contentsline {section}{\numberline {4}Applications: Why are Perceptrons useful?}{3}
+\contentsline {section}{\numberline {5}Evolution: What has the idea of a Perceptron led to?}{3}
