@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.12)  25 MAR 2018 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 MAR 2018 21:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Report.tex
 (./Report.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -44,7 +44,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -56,22 +56,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
+
+ []
+
 [1] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 234 strings out of 493029
- 2530 string characters out of 6136234
- 55064 words of memory out of 5000000
- 3845 multiletter control sequences out of 15000+600000
- 8848 words of font info for 31 fonts, out of 8000000 for 9000
+ 235 strings out of 492995
+ 2560 string characters out of 6132704
+ 56074 words of memory out of 5000000
+ 3863 multiletter control sequences out of 15000+600000
+ 9155 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  22i,12n,19p,257b,192s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Report.pdf (2 pages, 70707 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti12.pfb>
+Output written on Report.pdf (2 pages, 72950 bytes).
 PDF statistics:
  35 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream
