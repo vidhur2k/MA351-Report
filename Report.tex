@@ -1,14 +1,24 @@
 \documentclass[12pt, titlepage, a4paper]{article}
+\usepackage{subfiles}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 
 \title{Perceptrons: An Overview}
 \author{Harjas Monga and Vidhur Kumar}
-\usepackage{subfiles}
-\usepackage{amsmath}
 
 \begin{document}
 	\maketitle
+	
+	\tableofcontents
+	
+	\newpage
 
 	\textit{"We expect the perceptron to be the embryo of an electronic computer that will be able to walk, talk, see, write, reproduce itself and be conscious of its existence."} - The New York Times, 1958.	
+	
+	\section{What this report entails}
+		\subfile{sections/p1}	
 	
 	\section{Introduction: What is a Perceptron?}
 	
@@ -27,12 +37,10 @@
 		$
 	\end{center}
 	
-	\subfile{sections/p1}
-	
 	\section{Workings: What drives a Perceptron?}
 		\subfile{sections/introduction}
-	\section{Applications: Why are Perceptrons useful?}
-	
-	
+	\section{Applications: What can I do with a Perceptron?}
+		\subfile{sections/p4}
+		
 	\section{Evolution: What has the idea of a Perceptron led to?}
 \end{document}
