@@ -64,7 +64,26 @@ A perceptron can be a very useful tool for difficult problems such as recognizin
 
 \subsection{Training}
 
+\subsubsection{Sigmoid Neuron}
+
+A perceptron as currently described is not very useful if you are trying to train a multilayer perceptron to work as intended. For this purpose we replace the perceptrons we have been currently using with much more powerful sigmoid neurons. A sigmoid neuron works very similarly to the standard perceptron, howerver, the key difference is that unlike a perceptron a sigmoid neuron can output any value between 0 and 1. In addition, to this the method in which the output of the neuron is computed is different to the computation for the standard perceptron. Let column vector $A$ represent the input for the sigmoid neuron.
+
+$$
+	A = 
+	\begin{bmatrix}
+		a_1 \\
+		a_2 \\
+		\vdots \\
+		a_n
+	\end{bmatrix}
+$$
+\begin{center}
+	let $S = \sum_{i=1}^{n} w_ia_i - b$
+\end{center}
+Where $b$ is a bias and $w_i$ is the weight being applied to the ith input. The bias is utilized instead of using the threshold as was used before with standard perceptron. $S$ is written 
+
+
+
+The sigmoid neuron is useful because it always the training algoritihm to make small adjustments to 
+
 The most important part of any perceptron is to train it so that it produces the output that is expected of it. The training process is simply changing the weights applied in each perceptron in each layer until it produces the optimal outcome. This is accomplished using training data, data which the result is already known. In the hand drawing example used before, the training data would be images that have been tagged with what digit is represented. This way the algorithm that is used to train the perceptron would know if the multilayered perceptron got the right answer or not.
-
-\subsection{Back Propagation}
-
