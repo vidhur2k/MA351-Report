@@ -5,9 +5,10 @@
 \contentsline {subsection}{\numberline {3.2}Layering perceptrons}{4}
 \contentsline {subsection}{\numberline {3.3}Training}{5}
 \contentsline {subsubsection}{\numberline {3.3.1}Sigmoid Neuron}{5}
+\contentsline {subsubsection}{\numberline {3.3.2}Gradient Descent}{6}
 \contentsline {section}{\numberline {4}Applications: What can I do with a Perceptron?}{6}
 \contentsline {subsection}{\numberline {4.1}Linear Separability}{6}
 \contentsline {subsection}{\numberline {4.2}How is the Perceptron useful here?}{7}
 \contentsline {subsection}{\numberline {4.3}Implementing the Perceptron}{7}
-\contentsline {subsection}{\numberline {4.4}The Results}{11}
+\contentsline {subsection}{\numberline {4.4}The Results}{12}
 \contentsline {section}{\numberline {5}Conclusion: The Authors' Personal Thoughts}{14}
