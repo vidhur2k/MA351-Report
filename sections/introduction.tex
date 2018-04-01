@@ -35,4 +35,15 @@ The output of the perceptron is the output of the activation function above.
 
 \subsection{Layering perceptrons}
 
-Perceptrons are often useless by themselves. Most of the time perceptrons are stacked into column vectors. Then these column vectors are linked together. 
+Perceptrons gain a lot more functionality when they are used in combination with other perceptrons. Let $p_i$ represent a perceptron. Perceptrons are stack together to build column vectors of perceptrons as show below.
+
+$$
+	P = \begin{bmatrix}
+		p_1 \\
+		p_2 \\
+		\vdots \\
+		p_3
+	\end{bmatrix}
+$$
+
+The output . Therefore, the output of 1 vector of percptrons can be used as the input for another layer of perceptrons.

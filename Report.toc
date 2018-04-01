@@ -5,5 +5,6 @@
 \contentsline {subsection}{\numberline {3.2}Layering perceptrons}{4}
 \contentsline {section}{\numberline {4}Applications: What can I do with a Perceptron?}{4}
 \contentsline {subsection}{\numberline {4.1}Linear Separability}{4}
-\contentsline {subsection}{\numberline {4.2}How is the Perceptron useful here?}{4}
+\contentsline {subsection}{\numberline {4.2}How is the Perceptron useful here?}{5}
+\contentsline {subsection}{\numberline {4.3}Implementing the Perceptron}{5}
 \contentsline {section}{\numberline {5}Evolution: What has the idea of a Perceptron led to?}{5}
