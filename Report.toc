@@ -10,4 +10,4 @@
 \contentsline {subsection}{\numberline {4.2}How is the Perceptron useful here?}{6}
 \contentsline {subsection}{\numberline {4.3}Implementing the Perceptron}{6}
 \contentsline {subsection}{\numberline {4.4}The Results}{11}
-\contentsline {section}{\numberline {5}Evolution: What has the idea of a Perceptron led to?}{13}
+\contentsline {section}{\numberline {5}Conclusion: The Authors' Personal Thoughts}{13}
