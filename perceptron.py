@@ -11,6 +11,7 @@ from __future__ import print_function
 import sys
 from matplotlib import pyplot as plt
 import numpy as np
+import random
 
 
 # Returns 1 if the weighted input sum is greater than a threshold.
@@ -77,7 +78,7 @@ def plot(matrix, weights=None, title="Prediction Matrix"):
         plt.xlim(0, 1.05)
         plt.ylim(-0.05, 1.05)
 
-        c0s = plt.scatter(c0_data[0], c0_data[1], s=40.0, c='r', label='Class 0')
+        c0s = plt.scatter(c0_data[0], c0_data[1], s=40.0, c='r', label='Class -1')
         c1s = plt.scatter(c1_data[0], c1_data[1], s=40.0, c='b', label='Class 1')
 
         plt.legend(fontsize=10, loc=1)
@@ -124,7 +125,7 @@ def plot(matrix, weights=None, title="Prediction Matrix"):
         plt.xlim(0, 1.05)
         plt.ylim(0, 1.05)
 
-        c0s = plt.scatter(c0_data[0], c0_data[1], s=40.0, c='r', label='Class 0')
+        c0s = plt.scatter(c0_data[0], c0_data[1], s=40.0, c='r', label='Class -1')
         c1s = plt.scatter(c1_data[0], c1_data[1], s=40.0, c='b', label='Class 1')
 
         plt.legend(fontsize=10, loc=1)
@@ -151,9 +152,9 @@ def accuracy(matrix, weights):
     return num_correct / float(len(matrix))
 
 # Backpropogation algorithm
-def train_weights(matrix, weights, n_epoch=10, l_rate=1.00, do_plot=False, stop_early=True, verbose=True):
+def train_weights(matrix, weights, n_iteration=10, l_rate=1.00, do_plot=False, stop_early=True, verbose=True):
 
-    for epoch in range(n_epoch):
+    for epoch in range(n_iteration):
         current_accuracy = accuracy(matrix, weights)
         print("\nEpoch %d \nWeights: " %epoch, weights)
         print("Accuracy: ", current_accuracy)
@@ -181,7 +182,7 @@ def train_weights(matrix, weights, n_epoch=10, l_rate=1.00, do_plot=False, stop_
                 if verbose:
                     sys.stdout.write("\tWeight[%d]: %0.5f --> "%(j, weights[j]))
 
-
+                # Updating the weights depending on the error.
                 weights[j] += (l_rate * error * matrix[i][j])
 
                 if verbose:
@@ -190,12 +191,25 @@ def train_weights(matrix, weights, n_epoch=10, l_rate=1.00, do_plot=False, stop_
     plot(matrix, weights, title="Final epoch")
     return weights
 
+# # For the equation y = -1.11x + 1
+# def populateDataset(dataset):
+#     vector = []
+#     vector.append(1.0)
+#     vector.append(random.uniform(0, 0.8))
+#     vector.append(-1.11 * vector[1] + 1)
+#     vector.append(0.0)
+#     for i in range(0, 100):
+#         pass
+
+
 # Testing the two input plotting algorithm.
 def main():
+    for i in range(0, 10):
+        print(float(random.uniform(0, 1)))
 
-    n_epoch = 10
+    n_iteration = 10
     l_rate = 1.0
-    do_plot = False
+    do_plot = True
     stop_early = True
 
     """
@@ -212,12 +226,16 @@ def main():
               [1.0, 0.45, 0.15, 1.0],
               [1.0, 0.60, 0.30, 1.0],
               [1.0, 0.70, 0.65, 0.0],
-              [1.0, 0.92, 0.45, 0.0]]
+              [1.0, 0.92, 0.45, 0.0],
+              ]
+
                 # i1    # i2    # y
     weights = [0.20, 1.00, -1.00]
 
-    train_weights(matrix, weights=weights, n_epoch=n_epoch, l_rate=l_rate, do_plot=do_plot,
-                  stop_early=stop_early)
+    # train_weights(matrix, weights=weights, n_iteration=n_iteration, l_rate=l_rate, do_plot=do_plot,
+    #               stop_early=stop_early)
+
+    plot(matrix)
 
 
 if __name__ == '__main__':
