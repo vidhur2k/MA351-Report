@@ -51,9 +51,13 @@ def predict(inputs, weights):
     return 1.0 if activation_threshold >= 0.0 else 0.0
 	\end{lstlisting}
 	
-This function takes in the input vector and its corresponding weights as arguments. We loop through the vectors (which are called arrays in Python) and calculate the weighted sum of the inputs. In this case, our threshold is 0. If the weighted sum is positive (Class 1) we return 1. If not (Class -1), we return 0. This will help us calculate the error in prediction (explained later). \\
-
-NOTE: In the $main()$ function, we will have a $3x1$ vector called $weights$ that will be modified during each iteration of the training using backpropogation. \\
+	\begin{enumerate}
+		\item Initialize the $activation\_threshold$ to $0.0$. Any value above it will return 1, and any value below will return 0.
+		
+		\item Iterate through the inputs and their corresponding weights and calculate the weighted sum. The function \textbf{zip} lets us iterate through both the inputs and the weights parallely. We store the sum in the $activation\_threshold$ variable.
+		
+		\item Return the appropriate class depending on the value of the weighted sum.
+	\end{enumerate}
 
 Next, we implement a function $accuracy()$ that will calculate the percentage accuracy of the classifier during each iteration. \\ 
 
@@ -75,15 +79,27 @@ def accuracy(matrix, weights):
     return num_correct / float(len(matrix))
 	\end{lstlisting}
 	
-This function takes in a two dimensional array (a matrix) and a vector of weights. We loop through the two-dimensional array (through all the data vectors) and in each iteration, call the $predict()$ function to obtain the prediction for each data vector's class. We check to see if the predicted class is the same as the expected class. If it is, then we increment the counter by 1. At the end of the function, we return a decimal representation of the accuracy. \\
+	\begin{enumerate}
+		\item Initialize $num\_correct$ to $0.0$ (number of correct predictions) and $preds$ to an empty array (we will store multiple predictions in this array). 
+		
+		\item We iterate through the $matrix$. $matrix$ is a two-dimensional array, i.e., a collection of data vectors. The function \textbf{len} allows us to calculate the number of data vectors in $matrix$. 
+		
+		\item We add the predicted class of each data vector to the $preds$ array. Note that each prediction is itself an array, so this makes $preds$ a two-dimensional array.
+		
+		\item If the predicted class matches the expected class, then we increment $num_correct$. 
+		
+		\item We print out the list of predictions and return the ercentage accuracy of the predictions. The \textbf{float} function helps us prevent truncation (rounding down) of the answer to give us a better answer.
+	\end{enumerate}
+	
+	Finally, we implement our backpropogation algorithm, where we update the weights after each iteration to improve the predictions made by the perceptron.
 
 	\begin{lstlisting}[language=Python, frame=single]
 # Backpropogation algorithm
-def train_weights(matrix, weights, n_epoch=10, 
+def train_weights(matrix, weights, n_iteration=10, 
 l_rate=1.00, do_plot=False, stop_early=True, 
 verbose=True):
 
-    for epoch in range(n_epoch):
+    for epoch in range(n_iteration):
         current_accuracy = accuracy(matrix, weights)
         print("\nEpoch %d \nWeights: " %epoch, weights)
         print("Accuracy: ", current_accuracy)
@@ -92,7 +108,6 @@ verbose=True):
         if current_accuracy == 1.0 and stop_early:
             break
 
-		# 
         if do_plot:
             plot(matrix, weights, title="Epoch %d" 
             %epoch)
@@ -126,3 +141,37 @@ verbose=True):
     plot(matrix, weights, title="Final epoch")
     return weights
 	\end{lstlisting}
+	
+	\begin{enumerate}
+		\item An epoch is a forward and backward pass when it comes to training. The number of iterations is the sum of the forward and backward passes. We thus have $\frac{n_iteration }{2}$ number of iterations in this function. We save the current accuracy into $current\_accuracy$. 
+		
+		\item Should our algorithm ever reach maximum accuracy, the \textbf{break} statement allows us to terminate the training process immediately. 
+		
+		\item Should we ever need to see the predictions visually each time ($do\_plot$ will have a value of \textbf{True} in this case), we plot the data and the line to separate them. 
+		
+		\item We then iterate through the $matrix$ (which is again a two-dimensional array) and save the error of our prediction into $error$.
+		
+		\item Using the error in our prediction, we then iterate through $weights$ (this is an array of values that we change each time the $train\_weights()$ function is called. In each iteration, we update $weights[j]$ (which is the jth value in the $weights$ array) using the following formula \\
+		\begin{center}
+			$w_j = w_j + (l * e_i * M_{i, j})$
+		\end{center}
+		
+		where $w_j$ is the $j^{th}$ value in the $weights$ array, $l$ is the learning rate (a measure of how fast the perceptron should learn that was chosen arbitrarily), $e_i$ is the error in prediction for the $i^{th}$ data vector in $matrix$, and $M_{i, j}$ is the $j^th$ value in the $i^{th}$ data vector (the corresponding input to the weight).
+		
+		\item The $verbose$ variable is a boolean value. If it is \textbf{True}, we print out the value of the weights before and after they are updated. 
+		
+		\item Regardless of whether we plot the line and data points during each iteration, we plot the points and the line after the iteration terminates. 
+		
+		\item Finally, we return the updated $weights$.
+	\end{enumerate}
+	
+\subsection{The Results}
+Shown below are the plots from each epoch. Note that we start the number at $0$. We have $\frac{10}{2} = 5$ epochs.
+
+\begin{center}
+	\includegraphics[scale=0.4]{e0}
+	\includegraphics[scale=0.4]{e1}
+	\includegraphics[scale=0.4]{e2}
+	\includegraphics[scale=0.4]{e3}
+	\includegraphics[scale=0.4]{e10}
+\end{center}
