@@ -88,14 +88,52 @@ $$	W=
 	\end{bmatrix}
 $$
 $$	
-	Z = W \bullet A - b
+	Z = \begin{bmatrix}
+		w_1 & w_2 & \dots & w_n
+	\end{bmatrix}	
+	\bullet
+	\begin{bmatrix}
+		a_1 \\ a_2 \\ \vdots \\ a_n	
+	\end{bmatrix} - b
+	 = W \bullet A - b
 $$
 The sigmoid function, $$\sigma(Z) = \frac{1}{1+e^{-Z}}$$, is used to take any input and return a value between 0 and 1. This is useful because the value of $Z$ is not constrained to 0 to 1, however, we need the output to be 0 to 1 for analysis and the next layer of perceptrons. \\ \\
 The sigmoid neuron is useful because it always the training algoritihm to make small adjustments to the to the weights and baises, which in turn allows us to make small adjustments to the output of the multilayered perceptrons. Training is very very difficult without using sigmoid neurons because the values are binary we don't know how much impact a small change has on the output. 
 
+\subsubsection{Cost Function}
+The Cost function is a formula that takes the perceptron output and the correct output as the input and outputs how bad or good the multilayer perceptron is. The training algorithm uses the cost function to determine what effects changes on the weights and biases have on the accurarcy of the multilayered perceptron.\\ \\
+The mathematical definition of the cost function is as follows.
+$$
+	A = \begin{bmatrix}
+		a_{11} & a_{12} & \dots & a_{1m} \\
+		a_{21} & a_{22} & \dots & a_{2m} \\
+		\vdots \\
+		a_{n1} & a_{n2} & \dots & a_{nm}
+	\end{bmatrix}
+	C = \begin{bmatrix}
+		c_{11} & c_{12} & \dots & c_{1m} \\
+		c_{21} & c_{22} & \dots & c_{2m} \\
+		\vdots \\
+		c_{n1} & c_{n2} & \dots & c_{nm}
+	\end{bmatrix}
+$$
+Where the column vectors of $A$ represent the desired output of the multilayered perceptron, and where the column vectors of $C$ represent the actual output of the multilayered perceptron.
+$$
+	C(w, b) = \frac{1}{2n} \sum_{i=1}^{m} ||(A^T)_i-(C^T)_i||^2
+$$
+Where $w$ and $b$ represent the weights and biases that are needed to compute $C$.
+
 \subsubsection{Gradient Descent}
 
-Gradient descent 
+Gradient descent is the algorithm that is used to improve the multilayered perceptron. The core of gradient descent is to minimize the cost function. This is because the accuracy of the multilayered perceptron is better when the cost function is closer to 0.\\
+Gradient descent achieves this goal by computing the negative gradient of the cost function.
+
+$$
+	g(a) = -\nabla C(w,b)
+$$
+The function $g(a)$ points in the direction in which the Cost function is decreasing the fastest, we know this to be true because $\nabla C(w,b)$ points in the direction the cost function increase the fastest by the definition of the gradient. The process in which the gradient of the cost function is computed is called back propagation and is beyond the scope of this paper.\\ \\
+The $g(a)$ function is used to find the direction in which the all the weights and biases need to be modified to minimize the cost function. Once a small modification to the weights and biases are made $g(a)$ is recalculated and the weights and baises are changed again. This process continues until we find a local minimum of the cost function.\\ \\
+Gradient descent occurs in n dimensional space, where n is the number of weights and biases that the multilayered perceptron has. There are usually thousands of weights and biases in a multilayered perceptron. Because of this it very difficult to visualize the process of gradient descent. However, 
 
 
-The most important part of any perceptron is to train it so that it produces the output that is expected of it. The training process is simply changing the weights applied in each perceptron in each layer until it produces the optimal outcome. This is accomplished using training data, data which the result is already known. In the hand drawing example used before, the training data would be images that have been tagged with what digit is represented. This way the algorithm that is used to train the perceptron would know if the multilayered perceptron got the right answer or not.
+%The most important part of any perceptron is to train it so that it produces the output that is expected of it. The training process is simply changing the weights applied in each perceptron in each layer until it produces the optimal outcome. This is accomplished using training data, data which the result is already known. In the hand drawing example used before, the training data would be images that have been tagged with what digit is represented. This way the algorithm that is used to train the perceptron would know if the multilayered perceptron got the right answer or not.
