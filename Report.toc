@@ -1,15 +1,15 @@
-\contentsline {section}{\numberline {1}What this report entails}{2}
-\contentsline {section}{\numberline {2}Introduction: What is a Perceptron?}{2}
-\contentsline {section}{\numberline {3}Workings: What drives a Perceptron?}{3}
-\contentsline {subsection}{\numberline {3.1}Mathmatical Model of a single Perceptron}{3}
-\contentsline {subsection}{\numberline {3.2}Layering perceptrons}{4}
-\contentsline {subsection}{\numberline {3.3}Training}{5}
-\contentsline {subsubsection}{\numberline {3.3.1}Sigmoid Neuron}{5}
-\contentsline {subsubsection}{\numberline {3.3.2}Cost Function}{6}
-\contentsline {subsubsection}{\numberline {3.3.3}Gradient Descent}{7}
-\contentsline {section}{\numberline {4}Applications: What can I do with a Perceptron?}{8}
-\contentsline {subsection}{\numberline {4.1}Linear Separability}{8}
-\contentsline {subsection}{\numberline {4.2}How is the Perceptron useful here?}{9}
-\contentsline {subsection}{\numberline {4.3}Implementing the Perceptron}{9}
-\contentsline {subsection}{\numberline {4.4}The Results}{14}
-\contentsline {section}{\numberline {5}Conclusion: The Authors' Personal Thoughts}{16}
+\contentsline {section}{\numberline {1}What this report entails}{2}{section.1}
+\contentsline {section}{\numberline {2}Introduction: What is a Perceptron?}{2}{section.2}
+\contentsline {section}{\numberline {3}Workings: What drives a Perceptron?}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Mathmatical Model of a single Perceptron}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Layering perceptrons}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Training}{5}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Sigmoid Neuron}{5}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Cost Function}{6}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Gradient Descent}{7}{subsubsection.3.3.3}
+\contentsline {section}{\numberline {4}Applications: What can I do with a Perceptron?}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Linear Separability}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}How is the Perceptron useful here?}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Implementing the Perceptron}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}The Results}{14}{subsection.4.4}
+\contentsline {section}{\numberline {5}Conclusion: The Authors' Personal Thoughts}{16}{section.5}

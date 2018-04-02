@@ -1,13 +1,11 @@
 \subsection{Linear Separability}
 
-As stated before, a perecptron is a binary classifier. A fairly obvious application of the concept is for classification. There are several instances where classification is necessary. \\
-		
-		For this report, we have chosen a rudimentary example of a classification task: \textbf{Linear separability}. Consider a set of blue points and a set of red points on a two-dimensional plane. The two sets are linearly separable if there exists a line on the plane such that all of the blue points lie on one side of the plane and all of the red points lie on the other side. \\
+As stated before, a perecptron is a binary classifier. A fairly obvious application of the concept is for classification. There are several instances where classification is necessary. \\ \\
+For this report, we have chosen a rudimentary example of a classification task: \textbf{Linear separability}. Consider a set of blue points and a set of red points on a two-dimensional plane. The two sets are linearly separable if there exists a line on the plane such that all of the blue points lie on one side of the plane and all of the red points lie on the other side. \\
 
 \begin{center}
 	\includegraphics[scale=0.5]{ls}
 \end{center}
-
 Shown above is an instance of two-dimensional linear separation. This idea is immediately generalized to n-dimensional Euclidean spaces if the line is replaced by a hyperplane.
 
 \subsection{How is the Perceptron useful here?}
@@ -23,7 +21,6 @@ Recall that a Perceptron accepts a set of inputs and produces an output of eithe
 		\end{bmatrix}
 		$
 	\end{center}
-
 where $b$ is the bias, $i1$ is the x-coordinate of the point, $i2$ the y-coordinate, and $y$ is the expected output (0 or 1). \\
 
 \subsection{Implementing the Perceptron}
@@ -32,9 +29,7 @@ We decided to use Python to implement the algorithm. We generated 10 random two-
 	\begin{center}
 		\includegraphics[scale=0.5]{pts}
 	\end{center}
-	
-Shown above is are the 10 points plotted. Notice how there is a line (with slope $\approx$ -1) that can separate the two sets. The points above the line will be Class -1 and have a color of Red, while the points below the line will be Class 1 and have a color of Blue. \\
-
+Shown above is are the 10 points plotted. Notice how there is a line (with slope $\approx$ -1) that can separate the two sets. The points above the line will be Class -1 and have a color of Red, while the points below the line will be Class 1 and have a color of Blue. \\ \\
 We will first implement a function $predict()$ that will return the appropriate class for a specified set of inputs and their corresponding weights. \\
 
 
@@ -58,7 +53,6 @@ def predict(inputs, weights):
 		
 		\item Return the appropriate class depending on the value of the weighted sum.
 	\end{enumerate}
-
 Next, we implement a function $accuracy()$ that will calculate the percentage accuracy of the classifier during each iteration. \\ 
 
 	\begin{lstlisting}[language=Python, frame=single]
@@ -90,8 +84,7 @@ def accuracy(matrix, weights):
 		
 		\item We print out the list of predictions and return the ercentage accuracy of the predictions. The \textbf{float} function helps us prevent truncation (rounding down) of the answer to give us a better answer.
 	\end{enumerate}
-	
-	Finally, we implement our backpropogation algorithm, where we update the weights after each iteration to improve the predictions made by the perceptron.
+Finally, we implement our backpropogation algorithm, where we update the weights after each iteration to improve the predictions made by the perceptron.
 
 	\begin{lstlisting}[language=Python, frame=single]
 # Backpropogation algorithm
